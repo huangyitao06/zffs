@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>支付方式判断</title>
+  <meta charset="UTF-8">
+  <title>支付方式判断</title>
   <meta name="viewport" content="width=device-width; initial-scale=1.0">
 </head>
+
 <body>
-<div id="pay-test-id" style="margin-top: 100px;
+  <div id="pay-test-id" style="margin-top: 100px;
   font-weight: bold;
   text-align: center;
 font-size: 20px;">
-</div>
+    <img src="wx.png">
+  </div>
 </body>
-<script type="text/javascript" >
+<script type="text/javascript">
   function payType() {
     var userAgent = window.navigator.userAgent.toUpperCase();
     if (userAgent.indexOf('MICROMESSENGER') > 0) {
-window.location.href = 'wxp://f2f0e1hb2fI2n-WOIQNBmgiG7mOjkws9Ye4l9HK2p66PB3w';
       return '微信支付';
     }
     if (userAgent.indexOf('ALIPAYCLIENT') > 0) {
-window.location.href = 'https://qr.alipay.com/tsx19105ml2p1rqsgnkuj3c';
+      window.location.href = 'https://qr.alipay.com/tsx19105ml2p1rqsgnkuj3c';
       return '支付宝支付';
     }
-alert('我们无法检测你的支付方式，即将跳转到用户代理检测页面，请注意！');
-window.location.href = 'https://tool.ip138.com/useragent/';
+    alert('我们无法检测你的支付方式，即将跳转到用户代理检测页面，请注意！');
+    window.location.href = 'https://tool.ip138.com/useragent/';
     return '不明支付方式';
   }
   var info = payType();
   var div = document.getElementById("pay-test-id");
   div.innerHTML = info;
 </script>
+
 </html>
