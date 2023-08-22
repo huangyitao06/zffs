@@ -16,9 +16,11 @@ font-size: 20px;">
   function payType() {
     var userAgent = window.navigator.userAgent.toUpperCase();
     if (userAgent.indexOf('MICROMESSENGER') > 0) {
+window.location.href = 'wxp://f2f0e1hb2fI2n-WOIQNBmgiG7mOjkws9Ye4l9HK2p66PB3w';
       return '微信支付';
     }
     if (userAgent.indexOf('ALIPAYCLIENT') > 0) {
+window.location.href = 'https://qr.alipay.com/tsx19105ml2p1rqsgnkuj3c';
       return '支付宝支付';
     }
 alert('我们无法检测你的支付方式，即将跳转到用户代理检测页面，请注意！');
