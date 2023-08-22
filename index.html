@@ -22,7 +22,7 @@ font-size: 20px;">
   function payType() {
     var userAgent = window.navigator.userAgent.toUpperCase();
     if (userAgent.indexOf('MICROMESSENGER') > 0) {
-window.location.href = 'weixin://wxpay/bizpayurl?pr=uNG81B3zz';
+      window.location.href = 'weixin://wxpay/bizpayurl?pr=uNG81B3zz';
       return '微信支付';
     }
     if (userAgent.indexOf('ALIPAYCLIENT') > 0) {
