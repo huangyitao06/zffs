@@ -2,36 +2,266 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <style>
+      /* reset样式 */
+      html{color:#000;background:#fff}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body,button,input,select,textarea{font:12px/1.5 tahoma,arial,\5b8b\4f53}input,select,textarea{font-size:100%}table{border-collapse:collapse;border-spacing:0}th{text-align:inherit}fieldset,img,a img{border:0}iframe{display:block}abbr,acronym{border:0;font-variant:normal}del{text-decoration:line-through}address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:500}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:500}q:before,q:after{content:''}sup{vertical-align:text-top}sub{vertical-align:text-bottom}a:hover{text-decoration:underline}ins,a{text-decoration:none}.fn-clear:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0}.fn-clear{zoom:1}body.fn-hide{display:none}.fn-left,.fn-right{display:inline}.fn-left{float:left}.fn-right{float:right}
+  
+      #content {
+        width: 950px;
+        margin: 0 auto;
+      }
+      #content .content-container {
+        padding: 80px 0;
+      }
+      .error-img {
+        width: 420px;
+        height: 426px;
+        float: left;
+      }
+      .error-img img {
+        width: 100%;
+        height: 100%;
+      }
+      .error-text {
+        float: left;
+        margin-left: 100px;
+        padding-top: 150px;
+        width: 384px;
+      }
+      .error-text p.info {
+        color: #666;
+        font-size: 24px;
+      }
+      .error-text p.tip {
+        margin-top: 33px;
+      }
+      p.tip {
+        color: #fff;
+        font-size: 14px;
+      }
+      @media screen and (max-width: 736px) {
+  
+        #content {
+          width: 100%;
+          margin: 0 auto;
+        }
+        #content .content-container {
+          margin: 100px 65px;
+          padding: 0;
+        }
+        .error-img {
+          width: 200px;
+          margin: 0 auto;
+          height: 203px;
+          float: none;
+        }
+        .error-text {
+          float: none;
+          margin: 0 auto;
+          padding-top: 20px;
+          text-align: center;
+          width: auto;
+        }
+        .error-text p.info {
+          font-size: 16px;
+        }
+        .error-text p.tip {
+          color: #eee;
+        }
+      }
+    </style>
+  <style data-rc-order="prepend" rc-util-key="@ant-design-icons">
+    .anticon {
+      display: inline-block;
+      color: inherit;
+      font-style: normal;
+      line-height: 0;
+      text-align: center;
+      text-transform: none;
+      vertical-align: -0.125em;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .anticon>* {
+      line-height: 1;
+    }
+
+    .anticon svg {
+      display: inline-block;
+    }
+
+    .anticon::before {
+      display: none;
+    }
+
+    .anticon .anticon-icon {
+      display: block;
+    }
+
+    .anticon[tabindex] {
+      cursor: pointer;
+    }
+
+    .anticon-spin::before,
+    .anticon-spin {
+      display: inline-block;
+      -webkit-animation: loadingCircle 1s infinite linear;
+      animation: loadingCircle 1s infinite linear;
+    }
+
+    @-webkit-keyframes loadingCircle {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes loadingCircle {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+  <script async="" src="https://ur.alipay.com/tracert_a316.js"></script>
+  <script async="" src="https://gw.alipayobjects.com/os/lib/alipay/yuyan-monitor-sdk/1.1.0/dist/index.umd.min.js"
+    crossorigin="anonymous"></script>
+  <script
+    type="tern-site-config">{"authType":"custom","mode":"cloud","yuyanId":"180020010201199584","presets":[{"name":"openhome-main-app","yuyanId":"180020010001204428","entry":"https://render.alipay.com/p/yuyan/180020010001204428/","version":"latest","env":"PROD","network":"INTERNET","props":{"apps":[{"name":"openportal-plugin-app","yuyanId":"180020010001210191","entry":"https://render.alipay.com/p/yuyan/180020010001210191/","version":"latest","env":"PROD","network":"INTERNET","props":{}},{"name":"openportal-forum-app","yuyanId":"180020010001210095","entry":"https://render.alipay.com/p/yuyan/180020010001210095/","version":"latest","env":"PROD","network":"INTERNET","props":{}},{"name":"openportal-college-app","yuyanId":"180020010001210103","entry":"https://render.alipay.com/p/yuyan/180020010001210103/","version":"latest","env":"PROD","network":"INTERNET","props":{}},{"name":"mini-qrcode","yuyanId":"180020010001210189","entry":"https://render.alipay.com/p/yuyan/180020010001210189/","version":"latest","env":"PROD","network":"INTERNET","props":{}},{"name":"openhome-widget-app","yuyanId":"180020010001209373","entry":"https://render.alipay.com/p/yuyan/180020010001209373/","version":"latest","env":"PROD","network":"INTERNET","props":{}},{"name":"openhome-api-center","yuyanId":"180020010001209653","entry":"https://render.alipay.com/p/yuyan/180020010001209653/","version":"latest","env":"PROD","network":"INTERNET","props":{}},{"name":"openhome-isv-app","yuyanId":"180020010001204711","entry":"https://render.alipay.com/p/yuyan/180020010001204711/","version":"latest","env":"PROD","network":"INTERNET","props":{}},{"name":"openhome-ar-app","yuyanId":"180020010001207738","entry":"https://render.alipay.com/p/yuyan/180020010001207738/","version":"latest","env":"PROD","network":"INTERNET","props":{}},{"name":"openhome-pub-app","yuyanId":"180020010001206983","entry":"https://render.alipay.com/p/yuyan/180020010001206983/","version":"latest","env":"PROD","network":"INTERNET","props":{}},{"name":"openhome-main-manage","yuyanId":"180020010001205366","entry":"https://render.alipay.com/p/yuyan/180020010001205366/","version":"latest","env":"PROD","network":"INTERNET","props":{}},{"name":"open-punish","yuyanId":"180020010000010130","entry":"https://render.alipay.com/p/yuyan/180020010000010130/","version":"latest","env":"PROD","network":"INTERNET","props":{}},{"name":"o-sandbox","yuyanId":"180020010001205839","entry":"https://render.alipay.com/p/yuyan/180020010001205839/","version":"latest","env":"PROD","network":"INTERNET","props":{}},{"name":"open-universal-ability","yuyanId":"180020010001206434","entry":"https://render.alipay.com/p/yuyan/180020010001206434/","version":"latest","env":"PROD","network":"INTERNET","props":{}},{"name":"open-tiny-app","yuyanId":"180020010001206723","entry":"https://render.alipay.com/p/yuyan/180020010001206723/","version":"latest","env":"PROD","network":"INTERNET","props":{}},{"name":"ar-asset-submit","yuyanId":"180020010001207351","entry":"https://render.alipay.com/p/yuyan/180020010001207351/","version":"latest","env":"PROD","network":"INTERNET","props":{}},{"name":"openhome-pm-app","yuyanId":"180020010001206981","entry":"https://render.alipay.com/p/yuyan/180020010001206981/","version":"latest","env":"PROD","network":"INTERNET","props":{}},{"name":"openportal-api-app","yuyanId":"180020010001210388","entry":"https://render.alipay.com/p/yuyan/180020010001210388/","version":"latest","env":"PROD","network":"INTERNET","props":{}},{"name":"quality-console2","yuyanId":"180020010001227545","entry":"https://render.alipay.com/p/yuyan/180020010001227545/","version":"latest","env":"PROD","network":"INTERNET","props":{}},{"name":"Integrated-assistant","yuyanId":"180020010001215093","entry":"https://render.alipay.com/p/yuyan/180020010001215093/","version":"latest","env":"PROD","network":"INTERNET","props":{}},{"name":"openhome-plugin-app","yuyanId":"180020010001208100","entry":"https://render.alipay.com/p/yuyan/180020010001208100/","version":"latest","env":"PROD","network":"INTERNET","props":{}},{"name":"openhome-arplus-app","yuyanId":"180020010001214683","entry":"https://render.alipay.com/p/yuyan/180020010001214683/","version":"latest","env":"PROD","network":"INTERNET","props":{}},{"name":"operator","yuyanId":"180020010001242010","entry":"https://render.alipay.com/p/yuyan/180020010001242010/","version":"latest","env":"PROD","network":"INTERNET","props":{}},{"name":"solution-center","yuyanId":"180020010001200328","entry":"https://render.alipay.com/p/yuyan/180020010001200328/","version":"latest","env":"PROD","network":"INTERNET","props":{}},{"name":"ssb-store-b","yuyanId":"180020010001246922","entry":"https://render.alipay.com/p/yuyan/180020010001246922/","version":"latest","env":"PROD","network":"INTERNET","props":{}},{"name":"zhichi","yuyanId":"180020010001251321","entry":"https://render.alipay.com/p/yuyan/180020010001251321/","version":"latest","env":"PROD","network":"INTERNET","props":{}},{"name":"intergrate-assist","yuyanId":"180020010001252001","entry":"https://render.alipay.com/p/yuyan/180020010001252001/","version":"latest","env":"PROD","network":"INTERNET","props":{}},{"name":"ampe-workspace","yuyanId":"180020010001241807","entry":"https://render.alipay.com/p/yuyan/180020010001241807/","version":"latest","env":"PROD","network":"INTERNET","props":{}},{"name":"cloudrun-faas-main","yuyanId":"180020010001252799","entry":"https://render.alipay.com/p/yuyan/180020010001252799/","version":"latest","env":"PROD","network":"INTERNET","props":{}},{"name":"openhome-console-pages","yuyanId":"180020010001253408","entry":"https://render.alipay.com/p/yuyan/180020010001253408/","version":"latest","env":"PROD","network":"INTERNET","props":{}},{"name":"normal-k6vhytng2","yuyanId":"180020010001255761","entry":"https://render.alipay.com/p/yuyan/180020010001255761/","version":"latest","env":"PROD","network":"INTERNET","props":{}},{"name":"open-uni-module","yuyanId":"180020010001239046","entry":"https://render.alipay.com/p/yuyan/180020010001239046/","version":"latest","env":"PROD","network":"INTERNET","props":{}},{"name":"open-widget-helper","yuyanId":"180020010001250985","entry":"https://render.alipay.com/p/yuyan/180020010001250985/","version":"latest","env":"PROD","network":"INTERNET","props":{}},{"name":"open-ait-tools","yuyanId":"180020010001250394","entry":"https://render.alipay.com/p/yuyan/180020010001250394/","version":"latest","env":"PROD","network":"INTERNET","props":{}},{"name":"ecocheck-turnkey-ait-tools","yuyanId":"180020010001253815","entry":"https://render.alipay.com/p/yuyan/180020010001253815/","version":"latest","env":"PROD","network":"INTERNET","props":{}},{"name":"open-acceptance-tools","yuyanId":"180020010001255617","entry":"https://render.alipay.com/p/yuyan/180020010001255617/","version":"latest","env":"PROD","network":"INTERNET","props":{}},{"name":"devops-platform","yuyanId":"180020010001253964","entry":"https://render.alipay.com/p/yuyan/180020010001253964/","version":"latest","env":"PROD","network":"INTERNET","props":{}}],"customMenus":{},"externalApps":[],"menus":[],"menusMode":"standard","routes":[{"microApp":"openportal-plugin-app","microAppProps":{"autoSetLoading":true},"mode":"prepend","path":"/plugin"},{"microApp":"openportal-forum-app","microAppProps":{"autoSetLoading":true,"hideMainLayoutSubPath":["/portal/forum/competition/2023"]},"mode":"prepend","path":"/portal/forum"},{"microApp":"openportal-college-app","microAppProps":{"autoSetLoading":true},"mode":"prepend","path":"/portal/college"},{"microApp":"mini-qrcode","microAppProps":{"autoSetLoading":true},"mode":"prepend","path":"/develop/code"},{"microApp":"openhome-widget-app","microAppProps":{"autoSetLoading":true,"menuKey":"open.widget"},"mode":"prepend","path":"/develop/widget"},{"microApp":"openhome-api-center","microAppProps":{"autoSetLoading":true,"menuKey":"open.ability"},"mode":"prepend","path":"/develop/ability"},{"microApp":"openhome-isv-app","microAppProps":{"autoSetLoading":true,"menuKey":"open.isv"},"mode":"prepend","path":"/develop/isv"},{"microApp":"openhome-ar-app","microAppProps":{"autoSetLoading":true,"menuKey":"open.ar"},"mode":"prepend","path":"/develop/ar"},{"microApp":"openhome-pub-app","microAppProps":{"autoSetLoading":true,"menuKey":"open.pub.app"},"mode":"prepend","path":"/develop/pub"},{"microApp":"openhome-main-manage","microAppProps":{"autoSetLoading":true,"menuKey":""},"mode":"prepend","path":"/develop/manage"},{"microApp":"open-punish","microAppProps":{"autoSetLoading":false,"menuKey":"open.punishViolationRecords"},"mode":"prepend","path":"/develop/page/open-punish"},{"microApp":"o-sandbox","microAppProps":{"autoSetLoading":true,"menuKey":"open.sandbox.env"},"mode":"prepend","path":"/develop/sandbox"},{"microApp":"open-universal-ability","microAppProps":{"autoSetLoading":true,"menuKey":"manage"},"mode":"prepend","path":"/develop/uni"},{"microApp":"open-tiny-app","microAppProps":{"autoSetLoading":false,"menuKey":"open.develop.mini"},"mode":"prepend","path":"/develop/mini"},{"microApp":"ar-asset-submit","microAppProps":{"autoSetLoading":false,"menuKey":"open.ar.asset"},"mode":"prepend","path":"/develop/ar-asset"},{"microApp":"openhome-pm-app","microAppProps":{"autoSetLoading":true,"menuKey":"open.pm"},"mode":"prepend","path":"/develop/pm"},{"microApp":"openportal-api-app","microAppProps":{"autoSetLoading":true,"hideMainLayoutSubPath":["/api/apiDebug?projectId=*&type=sop"]},"mode":"prepend","path":"/api"},{"microApp":"quality-console2","microAppProps":{"autoSetLoading":true,"hideMainLayoutSubPath":["/develop/quality-console/single/*","/develop/quality-console/single/*/*","/develop/quality-console/single/*/*/*"]},"mode":"prepend","path":"/develop/quality-console"},{"microApp":"Integrated-assistant","microAppProps":{"hideMainLayout":true},"mode":"prepend","path":"/intergraAssist"},{"microApp":"openhome-plugin-app","microAppProps":{"autoSetLoading":true,"menuKey":"open.dev.plugin"},"mode":"prepend","path":"/develop/plugin"},{"microApp":"openhome-arplus-app","microAppProps":{"autoSetLoading":true,"menuKey":"open.arplus"},"mode":"prepend","path":"/develop/arplus"},{"microApp":"operator","microAppProps":{"autoSetLoading":true},"mode":"prepend","path":"/develop/operator"},{"microApp":"solution-center","microAppProps":{"autoSetLoading":true},"mode":"prepend","path":"/portal/solution"},{"microApp":"ssb-store-b","microAppProps":{},"mode":"prepend","path":"/develop/ssbstoreb"},{"microApp":"zhichi","microAppProps":{},"mode":"prepend","path":"/portal/zhichi"},{"microApp":"intergrate-assist","microAppProps":{"hideMainLayout":true},"mode":"prepend","path":"/ait"},{"microApp":"ampe-workspace","microAppProps":{"settings":{"sandbox":{"speedy":true}}},"mode":"prepend","path":"/develop/ampe"},{"microApp":"cloudrun-faas-main","microAppProps":{"menuKey":"open.develop.mini","settings":{"sandbox":{"speedy":true}}},"mode":"prepend","path":"/develop/cloudbase"},{"microApp":"openhome-console-pages","microAppProps":{"hideMainLayoutSubPath":["/portal/drawer/contest"],"settings":{"sandbox":{"speedy":true}}},"mode":"prepend","path":"/portal/drawer"},{"microApp":"normal-k6vhytng2","microAppProps":{"settings":{"sandbox":{"speedy":true}}},"mode":"prepend","path":"/develop/safeguard"},{"microApp":"devops-platform","microAppProps":{"autoSetLoading":true,"menuKey":"open.devops"},"mode":"prepend","path":"/develop/devops"}]}}],"apps":[],"version":"S09001658744","orchestration":["openhome-main-app"],"productCode":"UR202000000000000103","indexAppConfig":{"authType":"antbuservice","metadata":{"title":"支付宝开放平台","favicon":"https://img.alicdn.com/tfs/TB1qEwuzrj1gK0jSZFOXXc7GpXa-32-32.ico"},"appName":"openhome-main-app","version":"1.0.0","bigfishVersion":"4.0.154","yuyanId":"180020010001204428","sprintId":"S09001649136","buildTime":1689229173079,"createTime":1639645142000,"proxy":{"mode":"cors","PROD":{"/developerportal":{"target":"https://developerportal.alipay.com","pathRewrite":{"/developerportal":""},"mode":"cors"},"/openhome":{"target":"https://open.alipay.com","pathRewrite":{"/openhome":""},"mode":"cors"}}}}}</script>
+  <meta charset="utf-8">
+  <meta name="tern-framework-version" content="S09001676255">
+  <script>window.injectInfo = { env: "PROD" };</script>
+  <script>window.publicPath = "https://gw.alipayobjects.com/render/p/yuyan/180020010000012660/";</script>
+  <script>(function () {
+      if (window.document.documentMode && !window.__POWERED_BY_QIANKUN__) {
+        var winPublicPath = window.publicPath || '/';
+        var publicPathWithoutSlash = winPublicPath.substring(0, winPublicPath.length - 1);
+        document.writeln('<script src="' + publicPathWithoutSlash + '/polyfill-7e5ba17b.js" crossorigin="anonymous"><\/script>');
+      }
+    })();</script><!-- ternbaseEnv: prod -->
+
+  <script>window.__TERN__ = { "ssr": true, "x-ldcid-level": "", "env": "PROD", "user": {}, "netType": "INTERNET", "webgw": { "webgwDomain": "webgw-internet.alipay.com" } };</script>
+  <script src="https://gw.alipayobjects.com/render/p/yuyan/180020010000012660/main-b6d0f3e0.js"
+    crossorigin="anonymous"></script>
+  <script>window.injectInfo = { env: "PROD" };</script>
+  <script>window.publicPath = "https://gw.alipayobjects.com/render/p/yuyan/180020010001204428/";</script>
+  <script>!function () { var e = window; function n(n) { if (e.g_monitor && e.g_monitor.events) { var t = e.g_monitor.events; t.length < 20 && t.push(n) } } e.g_monitor = e.g_monitor || { listener: {}, events: [] }; var r = e.g_monitor.listener; function t(t, n) { try { e.addEventListener ? e.addEventListener(t, n, !0) : e.attachEvent ? e.attachEvent("on" + t, n) : e[t] = n, r[t] = n } catch (n) { console.warn("Tracert 监控事件注册失败：" + t, n) } } r.error || t("error", n), r.unhandledrejection || t("unhandledrejection", n) }();</script>
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="baidu-site-verification" content="codeva-mJa6veOxPK">
+  <meta name="bm_app_id" content="61baffd5738fbf052b04a8c2">
+  <meta name="bm_sprint_id" content="S09001649136">
+  <meta name="data-aspm" content="a316">
+  <meta name="data-bizType" content="pcwallet">
+  <link rel="shortcut icon" href="https://img.alicdn.com/tfs/TB1qEwuzrj1gK0jSZFOXXc7GpXa-32-32.ico">
+  <title>支付宝开放平台</title>
+  <link rel="stylesheet" href="https://gw.alipayobjects.com/render/p/yuyan/180020010001204428/umi.cc8fb708.css">
+  <script>// prettier-ignore
+    !function (n, o, e, t, a, i) {
+      n.yuyanMonitor = { config: function () { }, logError: function () { }, log: function () { } }; var r = o.createElement("script"), c = o.getElementsByTagName("script")[0];
+      r.async = 1, r.src = "https://gw.alipayobjects.com/os/lib/alipay/yuyan-monitor-sdk/1.1.0/dist/index.umd.min.js", r.crossOrigin = "anonymous", r.onload = function () {
+        YuyanMonitor && (n.yuyanMonitor = new YuyanMonitor({ "_appId": "180020010001204428", "yuyanId": "180020010001204428", "sprintId": "S09001649136", "isH5": false })); if (n.__TERN__) { if (n.__TERN__.user && n.__TERN__.user.outUserNo) { n.yuyanMonitor.config({ userId: n.__TERN__.user.outUserNo, env: n.__TERN__.env }); } else { n.yuyanMonitor.config({ env: n.__TERN__.env }); } }
+      }, c.parentNode.insertBefore(r, c)
+    }(window, window.document)</script>
+
+  <script>
+    !function () {
+      function assignProperty(target, k, v) {
+        if (target.hasOwnProperty(k) && target[k] !== undefined) {
+          return;
+        }
+        target[k] = v;
+      }
+      window._to = { ...window.to || {}, yuyanId: 180020010001204428, _isPrimaryApp: true }; assignProperty(window._to, 'spmAPos', "a316"); assignProperty(window._to, 'type', "automatic"); assignProperty(window._to, 'autoExpo', true); assignProperty(window._to, 'bizType', "pcwallet");
+    }()
+  </script>
+  <script>
+    !function (t, e, a, r, c) {
+      (function loader() { window.TracertCmdCache = []; var Tracert = { _isInit: true, _readyToRun: [], _guid: function _guid() { return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) { var r = Math.random() * 16 | 0; var v = c === 'x' ? r : r & 0x3 | 0x8; return v.toString(16) }) }, get: function get(key) { if (key === 'pageId') { window._tracert_loader_cfg = window._tracert_loader_cfg || {}; if (window._tracert_loader_cfg.pageId) { return window._tracert_loader_cfg.pageId } var metaa = document.querySelectorAll('meta[name=data-aspm]'); var spma = metaa && metaa[0] && metaa[0].getAttribute('content'); var spmb = document.body && document.body.getAttribute('data-aspm'); var pageId = spma && spmb ? "".concat(spma, ".").concat(spmb, "_").concat(Tracert._guid(), "_").concat(Date.now()) : "-_".concat(Tracert._guid(), "_").concat(Date.now()); window._tracert_loader_cfg.pageId = pageId; return pageId } return this[key] }, call: function call() { var args = arguments; var argsList; try { argsList = [].slice.call(args, 0) } catch (ex) { var argsLen = args.length; argsList = []; for (var i = 0; i < argsLen; i++) { argsList.push(args[i]) } } Tracert.addToRun(function () { Tracert.call.apply(Tracert, argsList) }) }, addToRun: function addToRun(_fn) { var fn = _fn; if (typeof fn === 'function') { fn._logTimer = new Date() - 0; Tracert._readyToRun.push(fn) } }, createTracert: undefined, spmAPos: undefined, autoLogPv: undefined, autoExpo: undefined, bizType: undefined, ifRouterNeedPv: undefined, enableMicroAppInstance: undefined }; var fnlist = ['config', 'logPv', 'info', 'err', 'click', 'expo', 'pageName', 'pageState', 'time', 'timeEnd', 'parse', 'expoCheck', 'stringify', 'report', 'set']; for (var i = 0; i < fnlist.length; i++) { var fn = fnlist[i]; (function (fn) { Tracert[fn] = function () { var args = arguments; var argsList; try { argsList = [].slice.call(args, 0) } catch (ex) { var argsLen = args.length; argsList = []; for (var _i2 = 0; _i2 < argsLen; _i2++) { argsList.push(args[_i2]) } } argsList.unshift(fn); Tracert.addToRun(function () { Tracert.call.apply(Tracert, argsList) }) } })(fn) } if (Proxy) { var handler = { get: function get(target, property) { var _target$hasOwnPropert; if (target !== null && target !== void 0 && (_target$hasOwnPropert = target.hasOwnProperty) !== null && _target$hasOwnPropert !== void 0 && _target$hasOwnPropert.call(target, property)) { return target[property] } return target.call.bind(this, property) } }; var proxyTracert = new Proxy(Tracert, handler); window.Tracert = proxyTracert } else { window.Tracert = Tracert } })();
+      var n = e.createElement(a), s = e.querySelector('head').getElementsByTagName(a)[0];
+      n.async = true, n.crossorigin = 'anonymous', n.src = r, e.querySelector('head').insertBefore(n, s);
+      n.onerror = function () { console.warn("[Bigfish] Tracert script load error, please check your network and spma."); var fallback = function () { console.warn("[Bigfish] Tracert run error, please make sure the script import right.") }; for (var fnlist = ["call", "start", "config", "logPv", "info", "err", "click", "expo", "pageName", "pageState", "time", "timeEnd", "parse", "checkExpo", "stringify", "report", "set", "before"], i = 0; i < fnlist.length; i++) { t[c][fnlist[i]] = fallback } };
+    }
+      (window, document, 'script', 'https://ur.alipay.com/tracert_a316.js', 'Tracert');</script>
+  <link rel="stylesheet" type="text/css"
+    href="https://gw.alipayobjects.com/render/p/yuyan/180020010001204428/276.e895f5a3.chunk.css"
+    crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css"
+    href="https://gw.alipayobjects.com/render/p/yuyan/180020010001204428/297.48ebcf2e.chunk.css"
+    crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css"
+    href="https://gw.alipayobjects.com/render/p/yuyan/180020010001204428/565.8841dce7.chunk.css"
+    crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css"
+    href="https://gw.alipayobjects.com/render/p/yuyan/180020010001204428/layout__index.328ff103.chunk.css"
+    crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css"
+    href="https://gw.alipayobjects.com/render/p/yuyan/180020010001204428/p__Home__index.4df1cc02.chunk.css"
+    crossorigin="anonymous">
+  <script type="text/javascript" src="//g.alicdn.com/ihelper/sdk-loader/index.js?_emogineBased_=true"
+    crossorigin="anonymous" charset="utf-8" async=""></script>
   <meta charset="UTF-8">
   <title>支付方式判断</title>
   <meta name="viewport" content="width=device-width; initial-scale=1.0">
 </head>
 
 <body>
-  <div id="pay-test-id" style="margin-top: 100px;
+  <div class="mobileTopContent___mn89G"><a class="mobileLogo___lhAZr" href="https://open.alipay.com"><span
+        class="mobileLogoIcon___ihUmK"><img
+          src="https://gw.alipayobjects.com/zos/bmw-prod/f466695f-f426-4e79-ae69-ecdf64a03c71.svg"
+          data-aspm-click="da13576"></span><span class="mobileLogoText___wj47e"
+        data-aspm-click="da13577">开放平台</span></a></div>
+  <div id="pay-test-id" class="title___S1bMK" style="margin-top: 100px;
   font-weight: bold;
   text-align: center;
 font-size: 20px;">
-    
   </div>
-<div style="text-align: center; width: 500px; border: green solid 1px;">
-<img src="wx.png" style="display: inline-block;" />
-</div>
+    <div id="content">
+      <div class="content-container clearfix">
+        <div class="error-img">
+          <img src="https://os.alipayobjects.com/rmsportal/UXamdIxYSkXfoVo.jpg">
+        </div>
+        <div class="error-text">
+          <p class="info">抱歉，您请求方式不受支持！</p>
+          <p class="tip">os-pub</p>
+        </div>
+      </div>
+    </div>
+  <footer class="mobile-alipay-open-footer___zTaMA" data-aspm="c83439" data-aspm-expo="true">
+    <div class="mobile-alipay-open-footer-content___vAe1O">
+      <img class="mobile-alipay-open-footer-follow-me___fBw0M" src="wx.png">
+      <h2 class="mobile-alipay-open-footer-text___JGIuQ">长按识别二维码进行微信支付</h2>
+      <img class="mobile-alipay-open-footer-follow-me___fBw0M"
+        src="https://gw.alipayobjects.com/mdn/rms_a5d34e/afts/img/A*gMKjT7OBZ78AAAAAAAAAAAAAARQnAQ">
+      <h2 class="mobile-alipay-open-footer-text___JGIuQ">关注我们</h2>
+    </div>
+    <div class="mobile-alipay-open-footer-bottom___ObOQu">
+      <div><span>Copyright © 支付宝（杭州）信息技术有限公司 ｜ ICP证浙B2-20160559 ｜</span><a class="alipay-open-footer-record___E6Vpy"
+          href="http://beian.miit.gov.cn/" target="_blank">网站备案号：浙ICP备16025414号-1</a></div>
+      <div class="alipay-open-footer-domain___LV1Ct">env: PROD </div>
+    </div>
+  </footer>
 </body>
 <script type="text/javascript">
   function payType() {
     var userAgent = window.navigator.userAgent.toUpperCase();
     if (userAgent.indexOf('MICROMESSENGER') > 0) {
-      window.location.href = 'weixin://wxpay/bizpayurl?pr=uNG81B3zz';
-      return '微信支付';
+      return '请使用支付宝扫描二维码';
     }
     if (userAgent.indexOf('ALIPAYCLIENT') > 0) {
       window.location.href = 'https://qr.alipay.com/tsx19105ml2p1rqsgnkuj3c';
       return '支付宝支付';
     }
-    alert('我们无法检测你的支付方式，即将跳转到用户代理检测页面，请注意！');
-    window.location.href = 'https://tool.ip138.com/useragent/';
-    return '不明支付方式';
+    alert('即将离开浏览器，请求打开支付宝！');
+    window.location.href = 'https://qr.alipay.com/tsx19105ml2p1rqsgnkuj3c';
+    return '请使用支付宝扫描二维码';
   }
   var info = payType();
   var div = document.getElementById("pay-test-id");
